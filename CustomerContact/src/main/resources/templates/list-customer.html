@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<title>Customer</title>
+</head>
+<body>
+	<div align="center">
+	<h1>Customer</h1>
+	<a class="mt-2 ml-2 btn btn-primary" href="new-customer">Create New Customer</a>
+	<br><br><a class="mt-2 ml-2 btn btn-success" href="/">Contact List</a>
+	<br><br>
+	<table border="1" cellpadding="10">
+		<thead>
+			<tr>
+				<th>Customer ID</th>
+				<th>Company Name</th>
+				<th>Address</th>
+				<th>Phone</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="customer : ${customer}">
+				<td th:text="${customer.id}">Contact ID</td>
+				<td th:text="${customer.companyName}">Customer</td>
+				<td th:text="${customer.address}">Staff</td>
+				<td th:text="${customer.phone}">Subject</td>
+				<td>
+					<a class="mt-2 ml-2 btn btn-primary" th:href="@{'/edit-customer/'} + ${customer.id}">Edit</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+
+</body>
+</html>
